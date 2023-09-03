@@ -36,23 +36,36 @@ class UserDetailPage extends StatelessWidget {
                 // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(height: 20),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment
                         .center, // จัดวางในแนวนอน (X-axis) ให้อยู่กึ่งกลาง
                     crossAxisAlignment: CrossAxisAlignment
                         .center, // จัดวางในแนวตั้ง (Y-axis) ให้อยู่กึ่งกลาง
                     children: [
+                      // Column(
+                      //   children: [
+                      //     ClipOval(
+                      //       child: Row(
+                      //         children: [
+                      //           Icon(
+                      //             Icons.person_2_rounded,
+                      //             color: Color(0xFFFF9800),
+                      //             size: 170,
+                      //           ),
+                      //         ],
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
+
                       Column(
                         children: [
                           ClipOval(
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.person_2_rounded,
-                                  color: Color(0xFFFF9800),
-                                  size: 170,
-                                ),
-                              ],
+                            child: Image.network(
+                              user!.img,
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ],
@@ -60,13 +73,13 @@ class UserDetailPage extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    '${user?.name.firstname}   ${user?.name.lastname}',
+                    '${user.name.firstname}   ${user.name.lastname}',
                     style: const TextStyle(
                         fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 20),
                   Text(
-                      'Username ${user?.username}'), // Display other user details here as needed
+                      'Username ${user.username}'), // Display other user details here as needed
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -110,7 +123,7 @@ class UserDetailPage extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      '${user?.email}', // Replace with your actual email data
+                                      user.email, // Replace with your actual email data
                                       style: const TextStyle(
                                         fontSize: 14,
                                       ),
@@ -167,7 +180,7 @@ class UserDetailPage extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      '${user?.phone}', // Replace with your actual email data
+                                      user.phone, // Replace with your actual email data
                                       style: const TextStyle(
                                         fontSize: 14,
                                       ),
@@ -224,25 +237,25 @@ class UserDetailPage extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      'Number: ${user?.address.number}', // Replace with your actual email data
+                                      'Number: ${user.address.number}', // Replace with your actual email data
                                       style: const TextStyle(
                                         fontSize: 14,
                                       ),
                                     ),
                                     Text(
-                                      'City: ${user?.address.city}', // Replace with your actual email data
+                                      'City: ${user.address.city}', // Replace with your actual email data
                                       style: const TextStyle(
                                         fontSize: 14,
                                       ),
                                     ),
                                     Text(
-                                      'Street: ${user?.address.street}', // Replace with your actual email data
+                                      'Street: ${user.address.street}', // Replace with your actual email data
                                       style: const TextStyle(
                                         fontSize: 14,
                                       ),
                                     ),
                                     Text(
-                                      'Zipcode: ${user?.address.zipcode}', // Replace with your actual email data
+                                      'Zipcode: ${user.address.zipcode}', // Replace with your actual email data
                                       style: const TextStyle(
                                         fontSize: 14,
                                       ),
@@ -263,13 +276,13 @@ class UserDetailPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Latitud: ${user?.address.geolocation.lat}'),
+                          Text('Latitud: ${user.address.geolocation.lat}'),
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Latitud: ${user?.address.geolocation.long}'),
+                          Text('Latitud: ${user.address.geolocation.long}'),
                         ],
                       ),
                     ],

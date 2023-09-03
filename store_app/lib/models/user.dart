@@ -14,6 +14,7 @@ class User {
   late String password;
   late Name name;
   late String phone;
+  late String img;
   
   factory User.fromJson(Map<String,dynamic> json) => _$UserFromJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);

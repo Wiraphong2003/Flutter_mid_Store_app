@@ -4,8 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:store_app/models/user.dart';
 
 class Services {
-  static const String url_user = "https://fakestoreapi.com/users/1";
-  static const String url_product = "https://fakestoreapi.com/products";
+  static const String url_user = "http://154.16.55.156:8080/user1";
 
   static Future<User> getUsers() async {
     try {
