@@ -59,6 +59,7 @@ class _BottomNavigationBarExampleState
     return Scaffold(
       appBar: AppBar(
         title: Text(appBarTitles[_selectedIndex]),
+        backgroundColor: Colors.pink,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
